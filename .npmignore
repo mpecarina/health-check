@@ -1,0 +1,13 @@
+node_modules
+tests
+health-check-master*
+.prettierrc.js
+tsconfig.json
+tslint.json
+Dockerfile
+docker-compose.*
+.editorconfig
+.bumpversion.cfg
+.eslintrc.js
+yarn.lock
+auth*.json

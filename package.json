@@ -1,0 +1,39 @@
+{
+  "name": "@mpecarina/health-check",
+  "version": "0.0.0",
+  "description": "kubernetes service health check",
+  "keywords": [
+    "api",
+    "gateway",
+    "typescript",
+    "nodejs"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "build": "./node_modules/prettier/bin-prettier.js --write src/**/*.js",
+    "dev": "nodemon --watch 'src/**/*.js' --watch 'sevice_definitions/health-check-routes.yaml' --exec node src/index.js",
+    "lint": "./node_modules/eslint/bin/eslint.js src/**/*.ts --fix && ./node_modules/prettier/bin-prettier.js --write src/**/*.ts",
+    "publish:cd": "yarn lint && yarn build && yarn publish --new-version $npm_package_version",
+    "release:patch": "yarn lint && yarn build && release patch",
+    "release:minor": "yarn lint && yarn build && release minor",
+    "release:major": "yarn lint && yarn build && release major",
+    "start": "node src/index.js",
+    "test": "jest test/unit --verbose --passWithNoTests"
+  },
+  "author": "mpecarina",
+  "license": "MIT",
+  "dependencies": {
+    "@mpecarina/koa-template": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.0.5",
+    "release-script": "^1.0.2"
+  }
+}

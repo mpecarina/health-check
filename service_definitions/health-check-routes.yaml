@@ -1,0 +1,23 @@
+- name: health-check-ready
+  controller: "health"
+  handler: "ready"
+  routes:
+    - "/health/ready"
+  method:
+    - get
+  auth:
+    sso: false
+  proxy:
+    enabled: false
+
+- name: health-check-live
+  controller: "health"
+  handler: "live"
+  routes:
+    - "/health/live"
+  method:
+    - get
+  auth:
+    sso: false
+  proxy:
+    enabled: false
