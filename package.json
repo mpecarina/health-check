@@ -12,8 +12,8 @@
   "scripts": {
     "build": "./node_modules/prettier/bin-prettier.js --write src/**/*.js",
     "dev": "nodemon --watch 'src/**/*.js' --watch 'sevice_definitions/health-check-routes.yaml' --exec node src/index.js",
-    "lint": "./node_modules/eslint/bin/eslint.js src/**/*.ts --fix && ./node_modules/prettier/bin-prettier.js --write src/**/*.ts",
-    "publish:cd": "yarn lint && yarn build && yarn publish --new-version $npm_package_version",
+    "lint": "./node_modules/eslint/bin/eslint.js src/**/*.js --fix && ./node_modules/prettier/bin-prettier.js --write src/**/*.js",
+    "publish:cd": "yarn lint && yarn build && yarn publish --new-version $npm_package_version --access public",
     "release:patch": "yarn lint && yarn build && release patch",
     "release:minor": "yarn lint && yarn build && release minor",
     "release:major": "yarn lint && yarn build && release major",

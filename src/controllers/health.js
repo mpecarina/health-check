@@ -1,7 +1,14 @@
 /* eslint-disable no-unused-vars */
 const { exec } = require("child_process")
 
-const { READY_CMD, LIVE_CMD, READY_OUTPUT_CONTAINS, LIVE_OUTPUT_CONTAINS, READY_FAILURE_MSG, LIVE_FAILURE_MSG } = process.env
+const {
+  READY_CMD,
+  LIVE_CMD,
+  READY_OUTPUT_CONTAINS,
+  LIVE_OUTPUT_CONTAINS,
+  READY_FAILURE_MSG,
+  LIVE_FAILURE_MSG,
+} = process.env
 
 const execShell = (cmd) => {
   return new Promise((resolve, reject) => {
